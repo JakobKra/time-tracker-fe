@@ -7,11 +7,6 @@ export interface Progress {
   last_tick_date: string | null
 }
 
-export interface MissingDays {
-  missingDates: string[]
-}
-
-// Helper to get auth headers
 async function getAuthHeaders() {
   const {
     data: { session },
@@ -19,11 +14,9 @@ async function getAuthHeaders() {
   if (!session) throw new Error('User not logged in')
   return {
     Authorization: `Bearer ${session.access_token}`,
-    'Content-Type': 'application/json',
   }
 }
 
-// Fetch user progress
 export async function fetchProgress(userId: string): Promise<Progress> {
   const headers = await getAuthHeaders()
   const res = await fetch(`${API_BASE}/progress/${userId}`, { headers })
@@ -31,7 +24,6 @@ export async function fetchProgress(userId: string): Promise<Progress> {
   return res.json()
 }
 
-// Mark all missed days (excluding today)
 export async function markMissedDays(userId: string) {
   const headers = await getAuthHeaders()
   const res = await fetch(`${API_BASE}/mark-missed/${userId}`, {
@@ -42,7 +34,6 @@ export async function markMissedDays(userId: string) {
   return res.json()
 }
 
-// Tick today
 export async function tickToday(userId: string) {
   const headers = await getAuthHeaders()
   const res = await fetch(`${API_BASE}/tick-today/${userId}`, {

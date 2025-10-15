@@ -3,7 +3,7 @@
     <!-- Weekday headers -->
     <div
       class="weekday"
-      v-for="(day, i) in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+      v-for="(day, i) in ['Pon', 'Tor', 'Sre', 'Čet', 'Pet', 'Sob', 'Ned']"
       :key="i"
     >
       {{ day }}

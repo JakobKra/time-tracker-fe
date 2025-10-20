@@ -42,14 +42,15 @@ const motivation = computed(() => {
   const progress = c / t
 
   if (progress === 0) return 'Začniva! 🌱 Komaj čakam vsak dan s tabo!'
-  if (progress > 0 && progress <= 0.15) return 'Uf, prvi dnevi 🌿 Še malo do četrtine! 💖'
-  if (progress > 0.15 && progress <= 0.25) return 'Yeey! 🌸 Četrtina je tu, samo še 3x toliko 😘'
-  if (progress > 0.25 && progress <= 0.4) return 'Že napredujeva 🌼 Polovica ni več tak daleč ✨'
-  if (progress > 0.4 && progress <= 0.55) return 'Uf, že polovica! 💛 Še enkrat tolko in bo 😍'
-  if (progress > 0.55 && progress <= 0.7)
-    return 'Več kot polovica! 💖 Še malo do pa sma proti koncu 🌷'
-  if (progress > 0.7 && progress <= 0.85) return 'Skoraj na koncu 🌹 Samo še zadnji koraki 😘'
-  if (progress > 0.85 && progress < 1) return 'Zadnji dnevi… ❤️ Končno bo 💌'
+  if (progress > 0 && progress < 0.1) return 'Prvi koraki 🌿 Vsak dan šteje! 💖'
+  if (progress >= 0.1 && progress < 0.2) return 'Super! 🌸 Malce naprej 😘'
+  if (progress >= 0.2 && progress < 0.25) return 'Še malo do četrtine ✨'
+  if (progress >= 0.25 && progress < 0.35) return 'Četrtina je tu! 🌷 Hitro je minlo'
+  if (progress >= 0.35 && progress < 0.5) return 'Več kot tretjina! 🌹 Polovica ni več daleč 💖'
+  if (progress >= 0.5 && progress < 0.65) return 'Pol poti! 💫 Še naprej 😍'
+  if (progress >= 0.65 && progress < 0.75) return 'Več kot polovica! 🌺 Že bližje cilju 😘'
+  if (progress >= 0.75 && progress < 0.85) return 'Skoraj na koncu 🌸 Samo še zadnji koraki ✨'
+  if (progress >= 0.85 && progress < 1) return 'Zadnji dnevi… ❤️ Končno bo koneeecc lubi💌'
   return 'Končno skupaj!!'
 })
 
